@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Year of the Rabbit</title>
+
+		<style>
+			div {outline: 0px solid red;}
+
+			.container
+			{
+				width: 700px;
+				height: 500px;
+				margin: 10% auto 0 auto;
+			}
+
+			.number
+			{
+				width: 150px;
+				height: 200px;
+				text-align: center;
+				font-size: 160px;
+				font-family: verdana;
+				color: rgba(200, 200, 200, 1);
+				position: absolute;
+				-webkit-transition: all 1s;
+				transition: all 1s;
+			}
+
+			.text
+			{
+				width: 500px;
+				height: 100px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 30px;
+				font-family: verdana;
+				position: absolute;
+				-webkit-transition: all 1s;
+				transition: all 1s;
+			}
+		</style>
+
+		<script>
+			function doChange() 
+			{
+				var numbers = document.getElementsByClassName("number");
+				var text = document.getElementsByClassName("text");
+
+				text[0].style.color = "rgba(255, 0, 0, 1)";
+				text[1].style.color = "rgba(200, 200, 200, 0)";
+
+				numbers[0].style.transform = "translate(130px, 40px) scale(-1.2, 1.2) ";
+				numbers[1].style.transform = "translate(70px, 0px) scale(1.5, 1.5)";
+				numbers[2].style.transform = "translate(20px, 40px) scale(1.2, 1.2)";
+				numbers[3].style.transform = "translate(-230px, -180px) rotate(-90deg) scale(3, 0.5)";
+			}
+
+			function reverseChange()
+			{
+				var numbers = document.getElementsByClassName("number");
+				var text = document.getElementsByClassName("text");
+
+				text[0].style.color = "rgba(255, 0, 0, 0)";
+				text[1].style.color = "rgba(200, 200, 200, 1)";
+
+				numbers[0].style.transform = "translate(0px, 0px) scale(1, 1)";
+				numbers[1].style.transform = "translate(0px, 0px) scale(1, 1)";
+				numbers[2].style.transform = "translate(0px, 0px) scale(1, 1)";
+				numbers[3].style.transform = "translate(0px, 0px) rotate(0deg) scale(1, 1)";
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container" onmouseover="doChange()" onmouseout="reverseChange()">
+			<div class="number" style="margin-left:50px;margin-top:100px">2</div>
+			<div class="number" style="margin-left:200px;margin-top:100px">0</div>
+			<div class="number" style="margin-left:350px;margin-top:100px">2</div>
+			<div class="number" style="margin-left:500px;margin-top:100px">3</div>
+			<div class="text" style="margin-left:100px;margin-top:400px;color:rgba(255, 0, 0, 0);">Happy Year of the Rabbit!</div>
+			<div class="text" style="margin-left:100px;margin-top:400px;color: rgba(200, 200, 200, 1);">(Hover to play)</div>
+		</div>
+	</body>
+</html>
